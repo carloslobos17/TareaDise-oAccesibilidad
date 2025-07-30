@@ -1,91 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Notas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>Tabla de Notas</title>
 </head>
 <body>
+
+  <!-- Navegación principal con roles -->
+  <nav role="navigation" aria-label="Navegación principal">
+    <div class="logo" role="banner">NotasApp</div>
+    <ul role="menubar" aria-label="Menú principal">
+      <li role="none"><a role="menuitem" href="#">Inicio</a></li>
+      <li role="none"><a role="menuitem" href="#">Materias</a></li>
+      <li role="none"><a role="menuitem" href="#">Acerca</a></li>
+    </ul>
+  </nav>
+
+  <main role="main" aria-labelledby="titulo-principal">
+    <h2 id="titulo-principal">Buscar Materia</h2>
+
+    <label for="searchInput" class="visually-hidden">Campo de búsqueda</label>
+    <input
+      type="text"
+      id="searchInput"
+      role="searchbox"
+      aria-label="Buscar materia por nombre"
+      aria-controls="tablaNotas"
+      aria-describedby="descripcionBusqueda"
+      placeholder="Buscar materia..." />
+    
+    <p id="mensajeBusqueda" role="alert" aria-live="polite" aria-label="Resultado de búsqueda" class="visually-hidden"></p>
+
+
+    <p id="descripcionBusqueda" class="visually-hidden">
+      Ingrese el nombre de la materia para filtrar la tabla de resultados.
+    </p>
+
     <div
-    role="table"
-    aria-label="Tabla de Notas de Estudiantes"
-    aria-describedby="Notas de Estudiantes"
-    aria-rowcount="10">
-    <div id="Notas de Estudiantes">
+      id="tablaNotas"
+      role="table"
+      aria-label="Tabla de Notas de Estudiantes"
+      aria-describedby="Notas de Estudiantes"
+      aria-rowcount="5">
+
+      <div id="Notas de Estudiantes">
         Registro de Notas de Estudiantes
-    </div>
-    <div role="rowgroup">
+      </div>
+
+      <div role="rowgroup">
         <div role="row">
-            <span role="columnheader" aria-label="Materias" aria-sort="none">Materias</span>
-            <span role="columnheader" aria-label="Computo 1" aria-sort="none">Computo 1</span>
-            <span role="columnheader" aria-label="Computo 2" aria-sort="none">Computo 2</span>
-            <span role="columnheader" aria-label="Computo 3" aria-sort="none">Computo 3</span>
-            <span role="columnheader" aria-label="Nota Final" aria-sort="none">Nota Final</span>
+          <span role="columnheader" aria-label="Materias">Materias</span>
+          <span role="columnheader" aria-label="Cómputo 1">Cómputo 1</span>
+          <span role="columnheader" aria-label="Cómputo 2">Cómputo 2</span>
+          <span role="columnheader" aria-label="Cómputo 3">Cómputo 3</span>
+          <span role="columnheader" aria-label="Nota Final">Nota Final</span>
         </div>
-    </div>
-    <div role="rowgroup">
+      </div>
+
+      <div role="rowgroup" id="tableBody">
         <div role="row" aria-rowindex="1">
-            <span role="cell">Diseño Web Adaptable</span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
+          <span role="cell">Diseño Web Adaptable</span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
         </div>
         <div role="row" aria-rowindex="2">
-            <span role="cell">Psicologia General</span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
+          <span role="cell">Psicología General</span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
         </div>
         <div role="row" aria-rowindex="3">
-            <span role="cell">Legislacion</span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
+          <span role="cell">Legislación</span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
         </div>
         <div role="row" aria-rowindex="4">
-            <span role="cell">Programacion de Base de Datos</span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
+          <span role="cell">Programación de Base de Datos</span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
         </div>
         <div role="row" aria-rowindex="5">
-            <span role="cell">Tecnicas Contables</span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
-            <span role="cell"></span>
+          <span role="cell">Técnicas Contables</span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
+          <span role="cell"></span>
         </div>
+      </div>
     </div>
-</div>
+  </main>
 
-<style>
-    [role="table"] {
-        display: table;
-        border-collapse: collapse;
-    }
-    [role="rowgroup"] {
-        display: table-row-group;
-    }
-    [role="row"] {
-        display: table-row;
-    }
-    [role="cell"] {
-        display: table-cell;
-        padding: 8px;
-        border: 1px solid #ccc;
-    }
-    [role="columnheader"] {
-        display: table-cell;
-        font-weight: bold;
-        background-color: #f0f0f0;
-        padding: 8px;
-        border: 1px solid #ccc;
-    }
-</style>
+  <footer role="contentinfo">
+    <p>&copy; 2025 NotasApp. Todos los derechos reservados.</p>
+  </footer>
 
+  <script src="main.js"></script>
 </body>
 </html>
