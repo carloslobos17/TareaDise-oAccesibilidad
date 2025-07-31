@@ -8,8 +8,8 @@ searchInput.addEventListener("input", function () {
 
   const filas = tableBody.querySelectorAll('[role="row"]');
   filas.forEach((fila) => {
-    const materia = fila.querySelector('[role="cell"]').textContent.toLowerCase();
-    const coincide = materia.includes(filtro);
+    const estudiante = fila.querySelector('[role="cell"]').textContent.toLowerCase();
+    const coincide = estudiante.includes(filtro);
 
     fila.style.display = coincide ? "" : "none";
     if (coincide) encontrados++;
@@ -19,11 +19,11 @@ searchInput.addEventListener("input", function () {
     mensajeBusqueda.textContent = "";
     mensajeBusqueda.classList.add("visually-hidden");
   } else if (encontrados === 0) {
-    mensajeBusqueda.textContent = "No se encontraron materias que coincidan.";
+    mensajeBusqueda.textContent = "No se encontro un nombre que coincidan.";
     mensajeBusqueda.classList.remove("visually-hidden");
     mensajeBusqueda.style.color = "red";
   } else {
-    mensajeBusqueda.textContent = `${encontrados} materia(s) encontrada(s).`;
+    mensajeBusqueda.textContent = `${encontrados} estudiante encontrada(o).`;
     mensajeBusqueda.classList.remove("visually-hidden");
     mensajeBusqueda.style.color = "green";
   }
