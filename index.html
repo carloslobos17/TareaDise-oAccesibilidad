@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,9 +9,11 @@
 </head>
 <body>
 
-  <!-- Navegación principal con roles -->
+  <!-- Navegación principal de la aplicación -->
   <nav role="navigation" aria-label="Navegación principal">
+    <!-- Logo de la aplicación -->
     <div class="logo" role="banner">NotasApp</div>
+    <!-- Menú principal de navegación -->
     <ul role="menubar" aria-label="Menú principal">
       <li role="none"><a role="menuitem" href="#">Inicio</a></li>
       <li role="none"><a role="menuitem" href="#">Materias</a></li>
@@ -18,9 +21,12 @@
     </ul>
   </nav>
 
+  <!-- Contenido principal de la página -->
   <main role="main" aria-labelledby="titulo-principal">
+    <!-- Título principal -->
     <h2 id="titulo-principal">Buscar Estudiante</h2>
 
+    <!-- Campo de búsqueda accesible para filtrar estudiantes -->
     <label for="searchInput" class="visually-hidden">Campo de búsqueda</label>
     <input
       type="text"
@@ -31,13 +37,15 @@
       aria-describedby="descripcionBusqueda"
       placeholder="Buscar materia..." />
 
+    <!-- Mensaje de resultado de búsqueda (se muestra dinámicamente) -->
     <p id="mensajeBusqueda" role="alert" aria-live="polite" aria-label="Resultado de búsqueda" class="visually-hidden"></p>
 
-
+    <!-- Descripción accesible para el campo de búsqueda -->
     <p id="descripcionBusqueda" class="visually-hidden">
       Ingrese el nombre del Estudiante para filtrar la tabla de resultados.
     </p>
 
+    <!-- Tabla de notas de estudiantes con roles ARIA -->
     <div
       id="tablaNotas"
       role="table"
@@ -45,10 +53,12 @@
       aria-describedby="Notas de Estudiantes"
       aria-rowcount="5">
 
+      <!-- Descripción de la tabla para accesibilidad -->
       <div id="Notas de Estudiantes">
         Registro de Nombres de los Estudiantes en Diseño Web Adaptable
       </div>
 
+      <!-- Encabezados de la tabla -->
       <div role="rowgroup">
         <div role="row">
           <span role="columnheader" aria-label="Materias">Nombres</span>
@@ -59,7 +69,9 @@
         </div>
       </div>
 
+      <!-- Cuerpo de la tabla con los datos de los estudiantes -->
       <div role="rowgroup" id="tableBody">
+        <!-- Fila 1: Datos del estudiante 1 -->
         <div role="row" aria-rowindex="1">
           <span role="cell">Orlin David Manzanares Salvaco</span>
           <span role="cell">8</span>
@@ -67,6 +79,7 @@
           <span role="cell">9</span>
           <span role="cell">8.3</span>
         </div>
+        <!-- Fila 2: Datos del estudiante 2 -->
         <div role="row" aria-rowindex="2">
           <span role="cell">Dalia Melissa Araujo Rivas</span>
           <span role="cell">9</span>
@@ -74,6 +87,7 @@
           <span role="cell">9</span>
           <span role="cell">9.3</span>
         </div>
+        <!-- Fila 3: Datos del estudiante 3 -->
         <div role="row" aria-rowindex="3">
           <span role="cell">Carlos Eduardo Lobos Soriano</span>
           <span role="cell">8</span>
@@ -81,6 +95,7 @@
           <span role="cell">9</span>
           <span role="cell">8.3</span>
         </div>
+        <!-- Fila 4: Datos del estudiante 4 -->
         <div role="row" aria-rowindex="4">
           <span role="cell">Gustavo Emanuel Rivas Avalos</span>
           <span role="cell">9</span>
@@ -92,10 +107,12 @@
     </div>
   </main>
 
+  <!-- Pie de página de la aplicación -->
   <footer role="contentinfo">
     <p>&copy; 2025 NotasApp. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Inclusión del archivo JavaScript principal -->
   <script src="main.js"></script>
 </body>
 </html>
